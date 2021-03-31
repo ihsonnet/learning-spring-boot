@@ -18,4 +18,8 @@ public class StudentController {
         return studentServices.getStudentInfo();
 
     }
+    @PostMapping
+    public void regNewStudent(@RequestBody Student student){
+        studentServices.addNewStudent(student);
+    }
 }
