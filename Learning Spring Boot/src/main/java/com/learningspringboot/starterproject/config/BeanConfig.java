@@ -10,39 +10,23 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfig {
     @Bean
     public Coder coder1(@Qualifier("computer1") Computer computer) {
-        Coder c1 = new Coder();
-        c1.setId(1001);
-        c1.setName("Mijan Ali");
-        c1.setLanguage("Java");
-        c1.setComputer(computer);
-
-        return c1;
+        return new Coder(1001,"Rahmat Ali","Python",computer);
     }
 
     @Bean
     public Computer computer1(){
-        Computer com1 = new Computer();
-        com1.setBrand("HP");
-
-        return com1;
+        return new Computer("HP");
     }
 
     @Bean
     public Coder coder2(@Qualifier("computer2") Computer computer) {
-        Coder c2 = new Coder();
-        c2.setId(1002);
-        c2.setName("Ram lal Ali");
-        c2.setLanguage("Python");
-        c2.setComputer(computer);
 
-        return c2;
+        return new Coder(1002,"Mahmud Ali Khan", "Java",computer);
     }
 
     @Bean
     public Computer computer2(){
-        Computer com2 = new Computer();
-        com2.setBrand("Dell");
 
-        return com2;
+        return new Computer("Dell");
     }
 }
