@@ -1,12 +1,13 @@
 package com.learningspringboot.starterproject;
+import com.learningspringboot.starterproject.config.BeanConfig;
 import com.learningspringboot.starterproject.model.Coder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
-@ImportResource({"classpath:BeanConfig.xml"})
+@Import({BeanConfig.class})
 public class StarterProjectApplication {
 
     public static void main(String[] args) {
@@ -15,6 +16,11 @@ public class StarterProjectApplication {
 
         System.out.println(c1.getName());
         System.out.println("Computer:"+ c1.getComputer().getBrand());
+
+        Coder c2 = (Coder) context.getBean("coder2");
+
+        System.out.println(c2.getName());
+        System.out.println("Computer:"+ c2.getComputer().getBrand());
     }
 
 }
