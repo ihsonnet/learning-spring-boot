@@ -12,8 +12,11 @@ public class AutowiredExampleApplication {
         ApplicationContext context = SpringApplication.run(AutowiredExampleApplication.class, args);
 
         Coder c1 = context.getBean(Coder.class);
+        c1.name = "Adam";
+        System.out.println(c1.name);
 
-        c1.petInfo();
+        Coder c2 = context.getBean(Coder.class);
+        System.out.println(c2.name);
     }
 
 }

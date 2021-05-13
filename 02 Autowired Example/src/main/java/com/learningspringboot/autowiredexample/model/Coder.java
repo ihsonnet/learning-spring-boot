@@ -2,11 +2,15 @@ package com.learningspringboot.autowiredexample.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import javax.annotation.PreDestroy;
 
 @Configuration
+@Scope(value = "prototype")  //singleton or prototype
 public class Coder {
+
+    public String name;
 
     @Autowired
     Dog dog;
@@ -14,14 +18,6 @@ public class Coder {
     public Coder() {
         System.out.println("Coder object Created");
     }
-
-//    final
-//    Dog dog;
-//
-//    public Coder(Dog dog) {
-//        System.out.println("Coder object Created");
-//        this.dog = dog;
-//    }
 
     public void petInfo(){
         dog.info();
