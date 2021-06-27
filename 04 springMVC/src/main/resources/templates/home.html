@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <title>Spring MVC</title>
+    <title>Add Programmer Form</title>
 </head>
 <body>
 
-<h1>Hi I'm Sonnet</h1>
-<p>My first Spring MVC project.</p>
+<h1>Add Programmer Form</h1>
+<hr/>
+<form action="addProgrammer">
+    <h3>ID</h3>
+    <input type="text" required name="pId"/>
+    <h3>Name</h3>
+    <input type="text" required name="pName"/>
+    <h3>Language</h3>
+    <input type="text" required name="plang"/>
+    <button type="submit">Add</button>
+</form>
 
 </body>
 </html>
